@@ -9,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     $filesavepath=$_SERVER['DOCUMENT_ROOT'].'/images/'.$filename;
     move_uploaded_file($_FILES['image']['tmp_name'],$filesavepath);
 
-    $conn = new PDO("mysql:host=localhost;dbname=local.pu911.com", "root", "");
+    include "connection_database.php";
     $sql = "INSERT INTO `news` (`name`, `image`, `description`) VALUES (?, ?, ?);";
     $name=$_POST['name'];
     $description=$_POST['description'];

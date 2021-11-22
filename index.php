@@ -33,7 +33,7 @@
         </thead>
         <tbody>
         <?php
-            $conn = new PDO("mysql:host=localhost;dbname=local.pu911.com", "root", "");
+            include "connection_database.php";
             $reader = $conn->query("SELECT * FROM news");
             foreach ($reader as $row) {
                 echo "
